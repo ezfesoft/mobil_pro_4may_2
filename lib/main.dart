@@ -49,13 +49,26 @@ class _MyHomePageState extends State<MyHomePage> {
             //------Widgetler bu alana yazılacak
             ListView(
               children: [
-                for (int i = 0; i < 20; i++)
-                  Container(
-                    height: 100,
-                    margin: EdgeInsets.all(5),
-                    color: Colors.blue,
-                    child: Center(child: Text("Eleman $i")),
+                Card(
+                  elevation: 3,
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  child: ListTile(
+                    title: Text(
+                      "Ahmet Yılmaz",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text("+90 555 111 22 33\nBilişim Güvenliği Tek."),
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.blue,
+                      child: Icon(Icons.person, color: Colors.white),
+                    ),
+                    isThreeLine: true,
+                    trailing: IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.call, color: Colors.green),
+                    ),
                   ),
+                ),
               ],
             ),
 
