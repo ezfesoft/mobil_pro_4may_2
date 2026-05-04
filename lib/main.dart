@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '4Mayıs',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const MyHomePage(),
     );
   }
@@ -46,21 +44,26 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Mobil Programlama"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
-          children: [
-              //------------------------
-  //------------------------
-  //------------------------
-  //------------------------
-  //------Widgetler bu alana yazılacak
-  //------------------------
-  //------------------------
-  //------------------------
-  //------------------------
-  //------------------------
-          ],
-        ),
+        child:
+            //------------------------
+            //------Widgetler bu alana yazılacak
+            ListView(
+              children: [
+                for (int i = 0; i < 20; i++)
+                  Container(
+                    height: 100,
+                    margin: EdgeInsets.all(5),
+                    color: Colors.blue,
+                    child: Center(child: Text("Eleman $i")),
+                  ),
+              ],
+            ),
+
+        //------------------------
+        //------------------------
+        //------------------------
+        //------------------------
+        //------------------------
       ),
     );
   }
